@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Cart from "./components/Cart/Cart";
+import ProductList from "./components/Products/ProductList";
+import { products } from "./data";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      products: products
+    }
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <Router>
+          <Header />
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/products" render={props => (<ProductList{...props} products={this.state.products}/>)} />
+            <Route path="/cart" component={Cart} />
+          </Switch>
+        </Router>
+      </React.Fragment>
+    );
+  }
 }
-
-export default App;
+ 

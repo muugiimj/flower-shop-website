@@ -1,0 +1,12 @@
+.container-fluid {
+    background-color: #faeee7;
+}
+
+span i:hover {
+    color: #ff8ba7;
+    font-size: 200%;
+}
+
+.number:hover {
+    color: #ff8ba7;
+}

@@ -1,0 +1,23 @@
+h2 {
+    font-size: 5.5rem;
+}
+p{
+    font-size: large;
+}
+.mothersDay h2, .mothersDay p {
+    color: #ff8ba7;
+    padding-bottom: .2em;
+    margin-right: 0;
+}
+.birthdaySlide {
+    padding-bottom: 5em;
+    color: #faeee7;
+}
+.valentineSlide h2 {
+    text-align: right;
+    padding-bottom: .5em;
+    color: #c72c41;
+}
+.valentineSlide p {
+    padding-bottom: 1em;
+}
